@@ -4,13 +4,23 @@ var currentPrice = document.getElementById("current-price");
 var submitBtn = document.getElementById("submit-btn");
 var outputBox = document.getElementById("output-box");
 
+if (initialPrice.value > 0 && stocksQuantity.value > 0 && currentPrice.value>0){
+
+    
+}
 submitBtn.addEventListener("click", submitHandler);
 
 function submitHandler(){
+    if (initialPrice.value > 0 && stocksQuantity.value > 0 && currentPrice.value>0){
+
     var ip = Number(initialPrice.value);
     var qty = Number(stocksQuantity.value);
     var curr = Number(currentPrice.value);
     calculateProfitAndLoss(ip,qty,curr);
+    }
+    else{
+        outputBox.innerText="Enter only input greater than 0!";
+    }
 
 }
 
