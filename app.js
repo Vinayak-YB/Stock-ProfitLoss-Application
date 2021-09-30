@@ -28,11 +28,15 @@ function calculateProfitAndLoss(initial,quantity,current){
     if(initial > current){
         var loss = (initial - current) * quantity;
         var lossPercentage = (loss/(initial*quantity))*100;
+        lossPercentage = lossPercentage.toFixed(2);
+        outputBox.style.color = "red"
         outputBox.innerText= "Loss is "+loss+ " Loss Percentage is "+ lossPercentage+ "%";
     }
     else if(current > initial){
         var gain = (current - initial) * quantity;
         var gainPercentage = (gain/(initial*quantity))*100;
+        gainPercentage = gainPercentage.toFixed(2);
+        outputBox.style.color = "green"
         outputBox.innerText= "Gain is "+gain+" Gain Percentage is "+gainPercentage + "%";
     }
     else{
